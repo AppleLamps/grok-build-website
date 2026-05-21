@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Grok Build Web — a browser chat UI for the grok CLI. Run grok --web and drive Grok Build from your browser instead of the TUI." />
+  <title>Grok Build Web — Browser UI for the grok CLI</title>
+  <link rel="canonical" href="https://grokbuildweb.com/" />
+
+  <meta property="og:title" content="Grok Build Web — Browser UI for the grok CLI" />
+  <meta property="og:description" content="Run grok --web and chat with Grok Build from your browser. Local HTTP+SSE bridge to the grok agent via ACP — zero npm dependencies." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://grokbuildweb.com/" />
+  <meta property="og:site_name" content="Grok Build Web" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:domain" content="grokbuildweb.com" />
+  <meta name="twitter:title" content="Grok Build Web — Browser UI for the grok CLI" />
+  <meta name="twitter:description" content="Run grok --web and chat with Grok Build from your browser. Local HTTP+SSE bridge to the grok agent via ACP — zero npm dependencies." />
+
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/layout.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <link rel="stylesheet" href="/css/sections.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand" aria-label="Grok Build Web home">
+        <span class="brand-mark" aria-hidden="true">G</span>
+        Grok Build
+        <span class="brand-sub">web</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Toggle navigation">
+        <span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="https://github.com/AppleLamps/grok-build-web#readme">Docs</a>
+        <a href="https://github.com/AppleLamps/grok-build-web" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="hero-eyebrow">
+            <span class="status-dot" aria-hidden="true"></span>
+            Browser UI for the grok CLI
+          </div>
+          <h1>Grok Build,<br /><em>in your browser.</em></h1>
+          <p class="hero-lead">
+            Run <code>grok --web</code> and drive Grok Build from a local chat UI — no TUI, no npm install, no build step.
+          </p>
+          <div class="hero-actions">
+            <a href="https://github.com/AppleLamps/grok-build-web" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Start on GitHub
+            </a>
+            <a href="https://github.com/AppleLamps/grok-build-web#readme" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Read the docs</a>
+          </div>
+          <dl class="hero-meta">
+            <div class="hero-stat">
+              <strong>Zero npm deps</strong>
+              <span>Vanilla ES modules only</span>
+            </div>
+            <div class="hero-stat">
+              <strong>ACP bridge</strong>
+              <span>Agent Client Protocol</span>
+            </div>
+            <div class="hero-stat">
+              <strong>SSE streaming</strong>
+              <span>Live agent updates</span>
+            </div>
+          </dl>
+        </div>
+
+        <div class="ui-mockup reveal" role="img" aria-label="Preview of the grok-build-web interface: project sidebar, assistant message, and message composer">
+          <div class="ui-mockup__chrome">
+            <span class="ui-mockup__dot" aria-hidden="true"></span>
+            <span class="ui-mockup__dot" aria-hidden="true"></span>
+            <span class="ui-mockup__dot" aria-hidden="true"></span>
+            <span class="ui-mockup__title">Grok Build Web</span>
+          </div>
+          <div class="ui-mockup__body">
+            <aside class="ui-mockup__sidebar">
+              <p class="ui-mockup__sidebar-label">Projects</p>
+              <ul>
+                <li class="is-active">grok-build-web</li>
+                <li>my-app</li>
+                <li>docs-site</li>
+              </ul>
+            </aside>
+            <div class="ui-mockup__main">
+              <div class="ui-mockup__message">
+                <p>I can help refactor the bridge, add tests, or walk through the ACP session flow. What should we tackle first?</p>
+              </div>
+              <div class="ui-mockup__composer" aria-hidden="true">
+                <span>Message Grok Build…</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="architecture">
+      <div class="container">
+        <p class="section-label reveal">How it works</p>
+        <h2 class="section-title reveal">HTTP in, ACP out.</h2>
+        <p class="section-lead reveal">
+          A thin Node bridge spawns <code>grok agent stdio</code> and translates browser HTTP + Server-Sent Events into the Agent Client Protocol — the JSON-RPC surface Zed, Claude Code, and Codex already speak.
+        </p>
+
+        <div class="grid-12 architecture-grid">
+          <div class="col-span-7 reveal">
+            <div class="terminal-block">
+              <pre><span class="comment"># Data flow</span>
+browser  <span class="prompt">──POST /prompt──▶</span>  server.mjs  <span class="prompt">──stdin──▶</span>  grok agent stdio
+browser  <span class="prompt">◀──SSE /stream──</span>   server.mjs  <span class="prompt">◀──stdout──</span>  grok agent stdio</pre>
+            </div>
+          </div>
+          <aside class="col-span-5 architecture-aside reveal">
+            <h3>What's under the hood</h3>
+            <p>Multi-tab sessions, workspace switching, and token-gated bootstrap — without changing how the agent runs.</p>
+            <ul>
+              <li>Isolated ACP session IDs per browser tab</li>
+              <li>Workspace switching via <code>?cwd=</code> without relaunching</li>
+              <li>Token-gated bootstrap, HttpOnly session cookie after</li>
+              <li>No build step — vanilla ES modules in the browser</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features">
+      <div class="container">
+        <p class="section-label reveal">Features</p>
+        <h2 class="section-title reveal">Everything the TUI does,<br />with room to breathe.</h2>
+        <p class="section-lead reveal">
+          Streaming responses, tool cards, permissions, and project management — in one local web UI built for long sessions.
+        </p>
+
+        <div class="features-grid">
+          <article class="feature-row reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h2l2 7 4-14 2 7h6"/></svg>
+            </span>
+            <div>
+              <h3>Real-time agent updates</h3>
+              <p>SSE delivers thinking chunks, message streams, tool calls, and hook events as they happen. Reconnect with exponential backoff if the tab sleeps.</p>
+            </div>
+          </article>
+          <article class="feature-row reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg>
+            </span>
+            <div>
+              <h3>Rich tool rendering</h3>
+              <p>Terminal output with ANSI colors, diffs, todos, browser actions, scheduler routines, and nested subagent disclosures — each with a purpose-built renderer.</p>
+            </div>
+          </article>
+          <article class="feature-row reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7v10H3zM14 7h7v6h-7zM14 15h7v2h-7z"/></svg>
+            </span>
+            <div>
+              <h3>Project drawer &amp; workspaces</h3>
+              <p>Sessions grouped by workspace. Switch projects from the topbar, resume recent sessions, or start fresh — each browser tab keeps its own isolated session.</p>
+            </div>
+          </article>
+          <article class="feature-row reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            </span>
+            <div>
+              <h3>Composer extras</h3>
+              <p>Attach text files as fenced code blocks, use browser speech input, slash-command autocomplete, model picker, and headless one-shot modes for check and best-of-N runs.</p>
+            </div>
+          </article>
+          <article class="feature-row reveal">
+            <span class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <div>
+              <h3>Permissions &amp; settings</h3>
+              <p>Manual or auto-approve tool permissions. Settings panel respawns the agent with new launch flags — effort, sandbox, model, allow/deny rules, and more.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="quickstart" class="quickstart">
+      <div class="container">
+        <p class="section-label reveal">Quick start</p>
+        <h2 class="section-title reveal">Up and running in minutes.</h2>
+
+        <div class="quickstart-grid">
+          <ol class="quickstart-steps reveal">
+            <li class="quickstart-step">
+              <div>
+                <h3>Authenticate once</h3>
+                <p>Install the <code>grok</code> CLI (Node 24+), then run <code>grok login</code> so the agent can reach your account.</p>
+              </div>
+            </li>
+            <li class="quickstart-step">
+              <div>
+                <h3>Launch from your project</h3>
+                <p>From any workspace directory, run <code>grok --web</code>. The bridge picks a free port and opens your browser.</p>
+              </div>
+            </li>
+            <li class="quickstart-step">
+              <div>
+                <h3>Or clone the repo</h3>
+                <p>Prefer the source tree? Clone <a href="https://github.com/AppleLamps/grok-build-web">grok-build-web</a> and start <code>node server.mjs</code> yourself.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="terminal-block reveal">
+            <pre><span class="comment"># Authenticate (once)</span>
+<span class="prompt">$</span> grok login
+
+<span class="comment"># From your project — recommended</span>
+<span class="prompt">$</span> grok --web
+
+<span class="comment"># Alternative: clone and run manually</span>
+<span class="prompt">$</span> git clone https://github.com/AppleLamps/grok-build-web.git
+<span class="prompt">$</span> cd grok-build-web
+<span class="prompt">$</span> node server.mjs</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="compatibility" class="requirements">
+      <div class="container">
+        <p class="section-label reveal">Compatibility</p>
+        <h2 class="section-title reveal">Runs where you already work.</h2>
+
+        <div class="requirements-table-wrap reveal">
+          <table class="compat-table">
+            <tbody>
+              <tr>
+                <th>Browsers</th>
+                <td>Chrome, Firefox, Safari, Edge (current releases)</td>
+              </tr>
+              <tr>
+                <th>OS</th>
+                <td>Windows, macOS, Linux</td>
+              </tr>
+              <tr>
+                <th>Runtime</th>
+                <td>Node.js 24+ (native WebSocket / modern stdlib)</td>
+              </tr>
+              <tr>
+                <th>CLI</th>
+                <td><code>grok</code> installed and authenticated</td>
+              </tr>
+              <tr>
+                <th>Protocol</th>
+                <td>Agent Client Protocol (ACP) over <code>grok agent stdio</code></td>
+              </tr>
+              <tr>
+                <th>Editors</th>
+                <td>Zed and other ACP-compatible clients use the same agent surface</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-inner reveal">
+          <div class="cta-copy">
+            <h2>Ready to try it?</h2>
+            <p>Clone grok-build-web, run <code>grok --web</code>, and open the README for configuration details.</p>
+          </div>
+          <div class="cta-actions">
+            <a href="https://github.com/AppleLamps/grok-build-web" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Get started
+            </a>
+            <a href="https://github.com/AppleLamps/grok-build-web#readme" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Read the docs</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-meta">Grok Build Web — browser UI for the grok CLI</p>
+      <div class="footer-links">
+        <a href="https://github.com/AppleLamps/grok-build-web">Repository</a>
+        <a href="https://github.com/AppleLamps/grok-build-web#readme">Docs</a>
+        <a href="https://github.com/AppleLamps/grok-build-website">Site source</a>
+        <a href="https://agentclientprotocol.com/" target="_blank" rel="noopener noreferrer">ACP</a>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
