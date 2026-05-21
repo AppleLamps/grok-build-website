@@ -1,12 +1,22 @@
 # grok-build-website
 
-Landing page for [grok-build-web](https://github.com/AppleLamps/grok-build-web) — the browser chat UI for the `grok` CLI.
+Landing page for [grok-build-web](https://github.com/AppleLamps/grok-build-web) — an independent, work-in-progress browser chat UI for the `grok` CLI.
 
 **Live site:** [grokbuildweb.com](https://grokbuildweb.com)
 
+## Status
+
+This website and the related `grok-build-web` project are works in progress and under active development. The UI, bridge behavior, configuration, documentation, and compatibility details may change as the project evolves. Expect incomplete features, rough edges, and occasional breaking changes.
+
+## Independence notice
+
+Grok Build Web is an independent community project. It is not affiliated with, endorsed by, sponsored by, or otherwise associated with xAI.
+
+Names such as Grok and xAI are used only to identify compatible tools and services. All trademarks, product names, and company names remain the property of their respective owners.
+
 ## About
 
-Grok Build Web lets you run `grok --web` and drive the Grok Build agent from a local browser instead of the terminal UI. This site explains what it does, how the bridge works, and links to the source on GitHub.
+Grok Build Web aims to let you run `grok --web` and drive the Grok Build agent from a local browser instead of the terminal UI. This site explains what it does, how the bridge works, and links to the source on GitHub.
 
 ## Project structure
 
@@ -59,6 +69,7 @@ Vercel serves `index.html` at `/` automatically. `vercel.json` adds security hea
 
 - **grok-build-web** — [github.com/AppleLamps/grok-build-web](https://github.com/AppleLamps/grok-build-web)
 - **Agent Client Protocol** — [agentclientprotocol.com](https://agentclientprotocol.com/)
+
 ## License
 
 Same as the grok-build-web project it promotes.
