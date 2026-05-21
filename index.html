@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Grok Build Web — a browser chat UI for the grok CLI. Run grok --web and drive Grok Build from your browser instead of the TUI." />
+  <meta name="description" content="Grok Build Web is an independent, work-in-progress browser chat UI for the grok CLI. It is not affiliated with, endorsed by, or sponsored by xAI." />
   <title>Grok Build Web — Browser UI for the grok CLI</title>
   <link rel="canonical" href="https://grokbuildweb.com/" />
 
   <meta property="og:title" content="Grok Build Web — Browser UI for the grok CLI" />
-  <meta property="og:description" content="Run grok --web and chat with Grok Build from your browser. Local HTTP+SSE bridge to the grok agent via ACP — zero npm dependencies." />
+  <meta property="og:description" content="Independent, work-in-progress browser UI for the grok CLI. Not affiliated with, endorsed by, or sponsored by xAI." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://grokbuildweb.com/" />
   <meta property="og:site_name" content="Grok Build Web" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:domain" content="grokbuildweb.com" />
   <meta name="twitter:title" content="Grok Build Web — Browser UI for the grok CLI" />
-  <meta name="twitter:description" content="Run grok --web and chat with Grok Build from your browser. Local HTTP+SSE bridge to the grok agent via ACP — zero npm dependencies." />
+  <meta name="twitter:description" content="Independent, work-in-progress browser UI for the grok CLI. Not affiliated with, endorsed by, or sponsored by xAI." />
 
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -41,8 +41,10 @@
         <span></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="#status">Status</a>
         <a href="#features">Features</a>
         <a href="#how-it-works">How it works</a>
+        <a href="#quickstart">Quick start</a>
         <a href="https://github.com/AppleLamps/grok-build-web#readme">Docs</a>
         <a href="https://github.com/AppleLamps/grok-build-web" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -58,11 +60,14 @@
         <div class="hero-content reveal">
           <div class="hero-eyebrow">
             <span class="status-dot" aria-hidden="true"></span>
-            Browser UI for the grok CLI
+            Independent WIP browser UI for the grok CLI
           </div>
           <h1>Grok Build,<br /><em>in your browser.</em></h1>
           <p class="hero-lead">
             Run <code>grok --web</code> and drive Grok Build from a local chat UI — no TUI, no npm install, no build step.
+          </p>
+          <p class="hero-note">
+            Built for long agent sessions and under active development. Expect rough edges while the UI, bridge behavior, and documentation continue to evolve.
           </p>
           <div class="hero-actions">
             <a href="https://github.com/AppleLamps/grok-build-web" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
@@ -86,31 +91,77 @@
           </dl>
         </div>
 
-        <div class="ui-mockup reveal" role="img" aria-label="Preview of the grok-build-web interface: project sidebar, assistant message, and message composer">
+        <div class="ui-mockup reveal" role="img" aria-label="Preview of the grok-build-web interface: project sidebar, streamed agent messages, tool status, and message composer">
           <div class="ui-mockup__chrome">
-            <span class="ui-mockup__dot" aria-hidden="true"></span>
-            <span class="ui-mockup__dot" aria-hidden="true"></span>
-            <span class="ui-mockup__dot" aria-hidden="true"></span>
-            <span class="ui-mockup__title">Grok Build Web</span>
+            <div class="ui-mockup__chrome-dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span class="ui-mockup__chrome-title">localhost:3000 / grok-build-web</span>
+            <span class="ui-mockup__chrome-status"><span class="status-dot" aria-hidden="true"></span> live</span>
           </div>
           <div class="ui-mockup__body">
             <aside class="ui-mockup__sidebar">
-              <p class="ui-mockup__sidebar-label">Projects</p>
-              <ul>
-                <li class="is-active">grok-build-web</li>
-                <li>my-app</li>
-                <li>docs-site</li>
-              </ul>
+              <span class="ui-mockup__sidebar-item is-active" aria-hidden="true"></span>
+              <span class="ui-mockup__sidebar-item" aria-hidden="true"></span>
+              <span class="ui-mockup__sidebar-item" aria-hidden="true"></span>
             </aside>
             <div class="ui-mockup__main">
-              <div class="ui-mockup__message">
-                <p>I can help refactor the bridge, add tests, or walk through the ACP session flow. What should we tackle first?</p>
+              <div class="ui-mockup__header">
+                <span class="ui-mockup__header-title">grok-build-web</span>
+                <span class="ui-mockup__header-meta">cwd: ~/projects/site</span>
+              </div>
+              <div class="ui-mockup__messages">
+                <div class="ui-mockup__message ui-mockup__message--user">
+                  <span class="ui-mockup__message-avatar" aria-hidden="true"></span>
+                  <p class="ui-mockup__message-bubble">
+                    <span class="ui-mockup__message-label">you</span>
+                    Improve the landing page UX.
+                  </p>
+                </div>
+                <div class="ui-mockup__message ui-mockup__message--agent">
+                  <span class="ui-mockup__message-avatar" aria-hidden="true"></span>
+                  <p class="ui-mockup__message-bubble">
+                    <span class="ui-mockup__message-label">grok</span>
+                    I found the static site. I’ll update the hero hierarchy, product preview, and responsive navigation.
+                  </p>
+                </div>
+                <div class="ui-mockup__tool">
+                  <span class="ui-mockup__tool-label">tool</span>
+                  <span class="ui-mockup__tool-track"><span></span></span>
+                  <span class="ui-mockup__tool-status">editing css/sections.css</span>
+                </div>
               </div>
               <div class="ui-mockup__composer" aria-hidden="true">
-                <span>Message Grok Build…</span>
+                <span class="ui-mockup__composer-input">Message Grok Build...</span>
+                <span class="ui-mockup__composer-btn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 14-7-7 14-2-5-5-2Z"/></svg>
+                </span>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="status" class="project-status">
+      <div class="container">
+        <div class="status-grid">
+          <article class="status-card reveal">
+            <p class="section-label">Project status</p>
+            <h2>Work in progress, actively developed.</h2>
+            <p>
+              Grok Build Web is experimental software. The interface, configuration, and CLI integration may change as the project improves, and some features may be incomplete or unstable.
+            </p>
+          </article>
+          <article class="status-card status-card--legal reveal">
+            <p class="section-label">Independence notice</p>
+            <h2>Independent and unofficial.</h2>
+            <p>
+              Grok Build Web is an independent community project. It is not affiliated with, endorsed by, sponsored by, or otherwise associated with xAI. Names such as Grok and xAI are used only to identify compatible tools and services, and remain the property of their respective owners.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -158,6 +209,7 @@ browser  <span class="prompt">◀──SSE /stream──</span>   server.mjs  <s
             <span class="feature-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h2l2 7 4-14 2 7h6"/></svg>
             </span>
+            <span class="feature-tag">Stream</span>
             <div>
               <h3>Real-time agent updates</h3>
               <p>SSE delivers thinking chunks, message streams, tool calls, and hook events as they happen. Reconnect with exponential backoff if the tab sleeps.</p>
@@ -167,6 +219,7 @@ browser  <span class="prompt">◀──SSE /stream──</span>   server.mjs  <s
             <span class="feature-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 10h8M8 14h5"/></svg>
             </span>
+            <span class="feature-tag">Render</span>
             <div>
               <h3>Rich tool rendering</h3>
               <p>Terminal output with ANSI colors, diffs, todos, browser actions, scheduler routines, and nested subagent disclosures — each with a purpose-built renderer.</p>
@@ -176,6 +229,7 @@ browser  <span class="prompt">◀──SSE /stream──</span>   server.mjs  <s
             <span class="feature-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h7v10H3zM14 7h7v6h-7zM14 15h7v2h-7z"/></svg>
             </span>
+            <span class="feature-tag">Workspaces</span>
             <div>
               <h3>Project drawer &amp; workspaces</h3>
               <p>Sessions grouped by workspace. Switch projects from the topbar, resume recent sessions, or start fresh — each browser tab keeps its own isolated session.</p>
@@ -185,6 +239,7 @@ browser  <span class="prompt">◀──SSE /stream──</span>   server.mjs  <s
             <span class="feature-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
             </span>
+            <span class="feature-tag">Compose</span>
             <div>
               <h3>Composer extras</h3>
               <p>Attach text files as fenced code blocks, use browser speech input, slash-command autocomplete, model picker, and headless one-shot modes for check and best-of-N runs.</p>
@@ -194,6 +249,7 @@ browser  <span class="prompt">◀──SSE /stream──</span>   server.mjs  <s
             <span class="feature-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </span>
+            <span class="feature-tag">Control</span>
             <div>
               <h3>Permissions &amp; settings</h3>
               <p>Manual or auto-approve tool permissions. Settings panel respawns the agent with new launch flags — effort, sandbox, model, allow/deny rules, and more.</p>
@@ -304,7 +360,7 @@ browser  <span class="prompt">◀──SSE /stream──</span>   server.mjs  <s
 
   <footer class="site-footer">
     <div class="container">
-      <p class="footer-meta">Grok Build Web — browser UI for the grok CLI</p>
+      <p class="footer-meta">Independent WIP browser UI for the grok CLI. Not affiliated with xAI.</p>
       <div class="footer-links">
         <a href="https://github.com/AppleLamps/grok-build-web">Repository</a>
         <a href="https://github.com/AppleLamps/grok-build-web#readme">Docs</a>

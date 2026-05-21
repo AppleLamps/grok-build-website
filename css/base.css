@@ -2,7 +2,11 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   color: var(--color-text);
-  background: var(--color-bg);
+  background:
+    linear-gradient(90deg, rgba(17, 24, 39, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(17, 24, 39, 0.035) 1px, transparent 1px),
+    var(--color-bg);
+  background-size: 5rem 5rem;
 }
 
 h1,
@@ -16,7 +20,7 @@ h4 {
 }
 
 h1 {
-  font-size: var(--text-5xl);
+  font-size: clamp(var(--text-5xl), 7vw, var(--text-6xl));
 }
 
 h2 {
@@ -30,6 +34,10 @@ h3 {
 p {
   line-height: 1.65;
   color: var(--color-text-muted);
+}
+
+a {
+  text-underline-offset: 0.22em;
 }
 
 code,

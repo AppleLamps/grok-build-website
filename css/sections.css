@@ -2,11 +2,14 @@
 .hero {
   padding-block: var(--section-padding);
   border-bottom: 1px solid var(--color-border);
+  background:
+    radial-gradient(circle at 78% 12%, rgba(13, 148, 136, 0.12), transparent 28rem),
+    linear-gradient(180deg, rgba(247, 248, 248, 0.82), rgba(255, 255, 255, 0.94));
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 0.92fr) minmax(24rem, 1.08fr);
   gap: clamp(2rem, 5vw, 4rem);
   align-items: start;
 }
@@ -28,6 +31,7 @@
 
 .hero h1 {
   margin-bottom: 1.25rem;
+  max-width: 11ch;
 }
 
 .hero h1 em {
@@ -37,8 +41,15 @@
 
 .hero-lead {
   font-size: var(--text-lg);
-  margin-bottom: 2rem;
+  margin-bottom: 0.875rem;
   max-width: 32rem;
+}
+
+.hero-note {
+  max-width: 31rem;
+  margin-bottom: 2rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
 }
 
 .hero-actions {
@@ -102,12 +113,45 @@
   min-width: 0;
 }
 
-.hero-visual .ui-mockup {
+.hero .ui-mockup {
   transition: box-shadow var(--duration-normal) var(--ease-out);
 }
 
-.hero-visual .ui-mockup:hover {
+.hero .ui-mockup:hover {
   box-shadow: var(--shadow-panel-hover);
+}
+
+/* Project status / disclaimer */
+.project-status {
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.status-card {
+  padding: 1.5rem;
+  background: var(--color-bg-panel);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+}
+
+.status-card--legal {
+  border-left-color: var(--color-text);
+}
+
+.status-card h2 {
+  margin-bottom: 0.75rem;
+  font-size: var(--text-2xl);
+}
+
+.status-card p:last-child {
+  font-size: var(--text-sm);
 }
 
 /* Protocol diagram — secondary / optional */
@@ -260,7 +304,7 @@
 /* Architecture section */
 .architecture {
   padding-block: var(--section-padding);
-  background: var(--color-bg);
+  background: rgba(255, 255, 255, 0.94);
 }
 
 .architecture-grid {
@@ -306,7 +350,9 @@
 /* Features */
 .features {
   padding-block: var(--section-padding);
-  background: var(--color-bg-subtle);
+  background:
+    linear-gradient(180deg, rgba(247, 248, 248, 0.94), rgba(247, 248, 248, 0.82)),
+    var(--color-bg-subtle);
   border-block: 1px solid var(--color-border);
 }
 
@@ -321,6 +367,7 @@
 /* Quick start */
 .quickstart {
   padding-block: var(--section-padding);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .quickstart-grid {
@@ -380,7 +427,7 @@
 /* Requirements */
 .requirements {
   padding-block: var(--section-padding);
-  background: var(--color-bg-subtle);
+  background: var(--color-bg-panel);
   border-top: 1px solid var(--color-border);
 }
 
@@ -404,6 +451,9 @@
 .cta {
   padding-block: var(--section-padding);
   border-top: 1px solid var(--color-border);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(13, 148, 136, 0.1), transparent 24rem),
+    var(--color-bg);
 }
 
 .cta-inner {
@@ -414,7 +464,7 @@
   gap: 2rem;
   padding: 2.5rem;
   border: 1px solid var(--color-border);
-  background: var(--color-bg-subtle);
+  background: rgba(247, 248, 248, 0.92);
   box-shadow: var(--shadow-panel);
 }
 
@@ -448,6 +498,7 @@
 
 @media (max-width: 900px) {
   .hero-grid,
+  .status-grid,
   .quickstart-grid {
     grid-template-columns: 1fr;
   }
@@ -472,9 +523,39 @@
   }
 }
 
+@media (max-width: 640px) {
+  .hero {
+    padding-block: clamp(3rem, 12vw, 4.5rem);
+  }
+
+  .hero-actions,
+  .cta-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn,
+  .cta-actions .btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero-meta {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .quickstart-grid {
+    gap: 1.25rem;
+  }
+
+  .cta-inner {
+    padding: 1.5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .hero-visual .ui-mockup {
+  .hero .ui-mockup {
     animation: none !important;
     transition: none !important;
     opacity: 1 !important;
@@ -484,5 +565,9 @@
   .protocol-log .log-line {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .ui-mockup__tool-track span {
+    animation: none !important;
   }
 }
