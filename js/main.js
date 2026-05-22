@@ -1,7 +1,6 @@
-import { initNav, initScrollReveal, initSectionIndex } from "./nav.js";
+import { initNav, initScrollReveal } from "./nav.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initNav();
   initScrollReveal();
-  initSectionIndex();
 });
