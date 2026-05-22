@@ -121,6 +121,57 @@
   box-shadow: var(--shadow-panel-hover);
 }
 
+/* Community funding banner */
+.funding-banner {
+  background: var(--color-text);
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.funding-banner__link {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.875rem;
+  padding-block: 0.75rem;
+  font-size: var(--text-sm);
+}
+
+.funding-banner__label,
+.funding-banner__cta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.funding-banner__label {
+  color: var(--color-terminal-prompt);
+}
+
+.funding-banner__copy {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.funding-banner__copy strong {
+  color: #fff;
+}
+
+.funding-banner code {
+  max-width: 20rem;
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.08);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.funding-banner__cta {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 /* Project status / disclaimer */
 .project-status {
   padding-block: clamp(2rem, 5vw, 3.5rem);
@@ -497,6 +548,15 @@
 }
 
 @media (max-width: 900px) {
+  .funding-banner__link {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
+
+  .funding-banner code {
+    max-width: 100%;
+  }
+
   .hero-grid,
   .status-grid,
   .quickstart-grid {
