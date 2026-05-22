@@ -201,192 +201,74 @@
   box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
 }
 
-/* Sticky section index (≥1100px only) */
-.section-index {
-  display: none;
-}
-
-@media (min-width: 1440px) {
-  .section-index {
-    display: flex;
-    flex-direction: column;
-    gap: 0.55rem;
-    position: fixed;
-    left: 1.25rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 50;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    pointer-events: auto;
-  }
-
-  .section-index__item {
-    display: inline-flex;
-    align-items: center;
-    width: 1.8rem;
-    color: var(--color-text-faint);
-    transition: color var(--duration-fast) var(--ease-out);
-  }
-
-  .section-index__item span {
-    color: var(--color-text-faint);
-    font-variant-numeric: tabular-nums;
-    transition: color var(--duration-fast) var(--ease-out);
-  }
-
-  /* Hide the verbose labels entirely — numerals only, no overlap with content. */
-  .section-index__item em {
-    display: none;
-  }
-
-  .section-index__item:hover,
-  .section-index__item.is-active {
-    color: var(--color-text);
-  }
-
-  .section-index__item.is-active span {
-    color: var(--color-accent-warm);
-  }
-
-  /* On dark architecture section, switch rail colors */
-  .section-index.is-on-dark .section-index__item {
-    color: var(--color-text-on-dark-muted);
-  }
-
-  .section-index.is-on-dark .section-index__item span {
-    color: var(--color-text-on-dark-muted);
-  }
-
-  .section-index.is-on-dark .section-index__item.is-active,
-  .section-index.is-on-dark .section-index__item:hover {
-    color: var(--color-text-on-dark);
-  }
-
-  .section-index.is-on-dark .section-index__item.is-active span {
-    color: var(--color-accent-on-dark);
-  }
-}
-
-/* Community funding banner — terminal phosphor on warm dark, single-line aligned */
+/* Community funding banner — a single clean line under the header */
 .funding-banner {
-  background: #0d0a06;
-  border-bottom: 1px solid rgba(124, 255, 92, 0.1);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  line-height: 1.4;
-  letter-spacing: 0.01em;
-}
-
-.funding-banner .container {
-  /* Pull the same content-inset as the rest of the page for true alignment */
-  padding-inline: var(--content-inset);
+  background: var(--color-bg-subtle);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .funding-banner__row {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
-  column-gap: 0.65rem;
-  row-gap: 0.25rem;
-  padding-block: 0.65rem;
-  color: var(--color-terminal-lime-dim);
-}
-
-.funding-banner__prompt {
-  color: var(--color-terminal-lime);
-  font-weight: 500;
-  user-select: none;
-}
-
-.funding-banner__label {
-  color: var(--color-terminal-lime);
-  font-weight: 500;
-}
-
-.funding-banner__sep {
-  color: rgba(124, 255, 92, 0.35);
-  user-select: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.25rem;
+  padding-block: 0.55rem;
 }
 
 .funding-banner__copy {
-  color: var(--color-terminal-lime-dim);
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 0;
+  font-size: var(--text-xs);
+  line-height: 1.4;
+  color: var(--color-text-muted);
 }
 
-.funding-banner__copy strong {
-  color: var(--color-terminal-lime);
+.funding-banner__tag {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-warm);
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.funding-banner__text strong {
+  color: var(--color-text);
   font-weight: 600;
 }
 
-.funding-banner__details {
-  color: var(--color-terminal-lime-dim);
-}
-
-.funding-banner__details summary {
-  cursor: pointer;
-  list-style: none;
-  color: var(--color-terminal-lime-dim);
+.funding-banner__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--color-accent);
+  font-weight: 500;
+  white-space: nowrap;
   transition: color var(--duration-fast) var(--ease-out);
 }
 
-.funding-banner__details summary::-webkit-details-marker { display: none; }
-.funding-banner__details summary::marker { content: ""; }
-
-.funding-banner__details summary span {
-  color: var(--color-terminal-lime);
-  margin-right: 0.1rem;
-}
-
-.funding-banner__details summary:hover,
-.funding-banner__details summary:hover span {
-  color: var(--color-terminal-lime);
-}
-
-.funding-banner__details[open] {
-  width: 100%;
-}
-
-.funding-banner__details code {
-  display: inline-block;
-  margin-top: 0.4rem;
-  padding: 0.25rem 0.5rem;
-  background: rgba(124, 255, 92, 0.06);
-  border: 1px solid rgba(124, 255, 92, 0.18);
-  color: var(--color-terminal-lime);
-  font-size: 0.7rem;
-  word-break: break-all;
-  user-select: all;
-}
-
-.funding-banner__cta {
-  margin-left: auto;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.4rem;
-  color: var(--color-terminal-lime);
-  font-weight: 500;
-  transition: opacity var(--duration-fast) var(--ease-out);
-}
-
 .funding-banner__cta:hover {
-  opacity: 0.75;
+  color: var(--color-accent-hover);
 }
 
 .funding-banner__cta span {
-  transition: transform var(--duration-fast) var(--ease-out);
   display: inline-block;
+  transition: transform var(--duration-fast) var(--ease-out);
 }
 
 .funding-banner__cta:hover span {
   transform: translateX(2px);
-}
-
-@media (max-width: 640px) {
-  .funding-banner__cta {
-    margin-left: 0;
-  }
 }
 
 /* Code block (light) */
